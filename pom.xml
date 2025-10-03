@@ -8,22 +8,42 @@
   <name>carstore Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+    <!-- JSTL para usar <c:forEach> e EL -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
     </dependency>
+
+    <!-- JSP API (opcional, mas útil para compilação) -->
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.3</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Servlet API -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.0.1</version>
       <scope>provided</scope>
     </dependency>
+
+    <!-- Banco de dados H2 -->
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>2.1.214</version>
+    </dependency>
+
+    <!-- JUnit para testes -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -53,7 +73,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.2</version>
         <configuration>
-          <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+          <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
           <warSourceDirectory>src/main/webapp</warSourceDirectory>
         </configuration>
       </plugin>
